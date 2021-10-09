@@ -1,9 +1,11 @@
 import generateDiscreteNotifications from "./scripts/generateDiscreteNotifications.js";
-import appendDiscreteNotifications from "./scripts/appendDiscreteNotifications.js";
+import generateContinuousNotifications from "./scripts/generateContinuousNotifications.js";
+import appendNotifications from "./scripts/appendNotifications.js";
 
 const textareaElement = document.querySelector("textarea");
 const buttonElement = document.querySelector("button");
-const outputElement = document.querySelector("output");
+const discreteNotificationsOutputElement = document.querySelector("#discrete-notifications > output");
+const continuousNotificationsOutputElement = document.querySelector("#continuous-notifications > output");
 
 /**
  * Handles click event then calls function for appending / displaying slacount messages.
@@ -13,9 +15,11 @@ const handleClick = (event) => {
     event.stopPropagation();
 
     const lines = textareaElement.value.split("\n");
-    const notifications = generateDiscreteNotifications(lines);
+    const discreteNotifications = generateDiscreteNotifications(lines);
+    const continuousNotifications = generateContinuousNotifications(lines);
 
-    appendDiscreteNotifications(notifications, outputElement);
+    appendNotifications(discreteNotifications, discreteNotificationsOutputElement);
+    appendNotifications(continuousNotifications, continuousNotificationsOutputElement);
 }
 
 
