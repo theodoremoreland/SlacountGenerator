@@ -4,6 +4,7 @@
 # Parses text of specific format and converts to text for slacount notifications.
 
 ### Input
+<pre>
     6:30PM 	1 	Instructor Do: Stoke Curiosity 	0:10
     6:40PM 	2 	Instructor Demo: Constructors 	0:05
     6:45PM 	3 	Student Do: Constructors 	0:15
@@ -22,6 +23,7 @@
     9:00PM 	16 	Student Do: Promise.all() 	0:15
     9:15PM 	17 	Instructor Review: Promise.all() 	0:15
     9:30PM 	18 	END 	0:00
+ </pre>
 
 ### Output 
     /slacount_create "Instructor Do: Stoke Curiosity" 10 minutes "Time for Instructor Demo: Constructors!"
